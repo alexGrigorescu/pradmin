@@ -1,12 +1,12 @@
 <?php
 
-class Story_Model_ extends Core_MainModel
+class Story_Model_Adrian extends Core_MainModel
 {
     public function __construct() {
         $this->setDB();
     }
 
-    public function test(){
+    public function adi(){
 
         $select = $this->getDB()
             ->select()
@@ -19,5 +19,4 @@ class Story_Model_ extends Core_MainModel
 
         return $result;
     }
-
 }
