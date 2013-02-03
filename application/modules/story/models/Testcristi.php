@@ -1,6 +1,6 @@
 <?php
 
-class Story_Model_ extends Core_MainModel
+class Story_Model_Testcristi extends Core_MainModel
 {
     public function __construct() {
         $this->setDB();
