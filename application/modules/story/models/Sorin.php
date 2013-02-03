@@ -1,12 +1,12 @@
 <?php
 
-class Story_Model_Test extends Core_MainModel
+class Story_Model_Sorin extends Core_MainModel
 {
     public function __construct() {
         $this->setDB();
     }
 
-    public function test(){
+    public function test2(){
 
         $select = $this->getDB()
             ->select()
@@ -16,8 +16,6 @@ class Story_Model_Test extends Core_MainModel
             ->order('p.id DESC');
 
         $result = $this->getDB()->fetchAll($select);
-
-        return $result;
+           return $result;
     }
-
 }
