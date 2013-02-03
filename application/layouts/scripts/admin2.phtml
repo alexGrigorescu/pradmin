@@ -1,0 +1,118 @@
+<?php echo $this->doctype(); ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Bridge Administration</title>
+		<script type="text/javascript">
+			var baseUrl = "<?php echo $this->baseUrl() ?>";
+		</script> 
+		
+		<?php 
+//			$this->headLink()->appendStylesheet($this->baseUrl('/css/style.css')); 
+			$this->headLink()->appendStylesheet($this->baseUrl('/css/admin.css')); 
+			$this->headLink()->appendStylesheet($this->baseUrl('/css/jquery-ui-1.8.18.custom.css')); 
+			$this->headLink()->appendStylesheet($this->baseUrl('/css/jquery.ui.tooltip.css')); 
+			$this->headLink()->appendStylesheet($this->baseUrl('/css/jquery.fancybox-1.3.4.css')); 
+			echo $this->headLink(); 
+			$this->headScript()->appendFile($this->baseUrl('/js/jquery.js'));	
+			$this->headScript()->appendFile($this->baseUrl('/js/jquery-ui-1.8.18.custom.min.js'));
+			$this->headScript()->appendFile($this->baseUrl('/js/jquery.fancybox-1.3.4.pack.js'));
+			$this->headScript()->appendFile($this->baseUrl('/js/scripts.js'));
+			$this->headScript()->appendFile($this->baseUrl('/js/validations.js'));
+			
+			//cluetip
+			$this->headScript()->appendFile($this->baseUrl('/js/jquery.ui.widget.js'));
+			$this->headScript()->appendFile($this->baseUrl('/js/jquery.ui.position.js'));
+			$this->headScript()->appendFile($this->baseUrl('/js/jquery.ui.tooltip.js'));
+			echo $this->headScript();
+		?>
+		
+		<script type="text/javascript">
+			$(function() {			
+				$( ".cluetip" ).tooltip();
+			});
+		</script>
+		<link href="<?php echo $this->baseUrl(); ?>/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	</head>
+
+	<body>
+		<?php 
+			$lang = $this->translate()->getLocale(); 
+			$translate = json_encode($this->translate()->getTranslator()->getMessages());
+		?>
+		<script type="text/javascript">
+			var translate = <?php echo $translate; ?>;
+		</script>
+		
+		<div id="header">
+			<div class="head"> <!-- *** head layout *** -->
+				<div class="head_top">
+					<div class="topbuts">
+						<ul class="clearfix">
+							<li><a href="<?php echo $this->url(array('module' => 'default','controller' => 'index', 'action' => 'logout'), null, true); ?>" class="red">Logout</a></li>
+						</ul>
+
+						<div class="user clearfix">
+							<span class="user-detail">
+								<span class="name">Welcome Admin</span>
+								<span class="text">Logged as admin</span>						
+							</span>
+						</div>
+					</div>
+
+					<div class="logo clearfix">
+						<a href="<?= $this->url(array('module' => 'admin', 'controller' => 'index', 'action' => 'index')); ?>">
+							<img src="<?php echo $this->baseUrl(); ?>/images/admin/bridge.png" alt="" />	
+							<br />
+							<span>administration panel</span>
+						</a>
+					</div>
+				</div>
+
+				<ul class="menu clearfix">
+					<li><a href="<?php echo $this->url(array('module'=>'admin', 'controller'=>'company','action'=>'index'), null, true); ?>">Companies</a></li>
+<!--					<li>
+						<a class="drop" href="#">Lorem ipsum</a>
+							<div class="dropdown">
+								<ul>
+									<li>
+										<a href="#">Ala bala portocala</a>
+									</li>
+									<li>
+										<a href="#">An tan te</a>
+									</li>
+									<li>
+										<a href="#">Care stie continuarea?</a>
+									</li>
+								</ul>
+							</div>
+					</li>-->
+					<li><a href="<?php echo $this->url(array('module'=>'admin', 'controller'=>'feedback','action'=>'get'), null, true); ?>">Feedback</a></li>
+					<li><a href="<?php echo $this->url(array('module'=>'admin', 'controller'=>'news','action'=>'index'), null, true); ?>">News</a></li>
+					
+					<li>
+						<a href="<?php echo $this->url(array('module'=>'admin', 'controller'=>'forum','action'=>'index'), null, true); ?>">Forum</a>
+							<div class="dropdown">
+								<ul>
+									<li><a href="<?php echo $this->url(array('module'=>'admin', 'controller'=>'forum','action'=>'list-categories'), null, true); ?>">Categories</a></li>
+<!--									<li><a href="<?php echo $this->url(array('module'=>'admin', 'controller'=>'forum','action'=>'list-topics'), null, true); ?>">Topics</a></li>-->
+								</ul>
+							</div>
+					</li>
+					
+					<li class="back" style="float: right;"><a class="button yellow" href="<?php echo $this->baseUrl(); ?>">Back to Bridge</a></li>
+				</ul>        
+			</div>
+		</div>
+
+		
+		<div id="content">
+			<div class="main-wrap">
+				<div id="messages" class="page clearfix"><?php $this->messenger(); ?></div>
+				<?php echo $this->layout()->content; ?>		
+			</div>
+		</div>
+
+						
+	</body>
+</html>

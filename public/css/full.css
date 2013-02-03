@@ -1,0 +1,92 @@
+@charset "utf-8";
+/* CSS Document */
+/* Copyright bridge*/
+/*=============================
+	colors used:
+	-------------
+
+==============================*/
+
+/* ====================== for full width ========================= */
+/*#header .inner{
+	min-width:960px;
+	width:auto !important;
+	width:960px;
+}
+#header .div-login{
+	width:100%;
+}
+#header #panel .inner-pannel{
+	width:100%;
+}
+#header #panel .inner-pannel form{
+	margin-left:10px;
+}
+#header.full .inner .logo{
+	padding-left:10px;
+}
+#header .inner #nav{
+	display:inline;
+	margin-right:10px;
+}*/
+#content{
+	min-width:960px;
+	width:auto !important;
+	width:960px;
+	background:url(../images/content-top-full.gif) repeat-x left top;
+}
+#content .content-bottom{
+	background: url(../images/content-bottom-full.gif) repeat-x left bottom;
+}
+#content .content-middle{
+	background: url(../images/content-bg.gif) repeat left top;
+}
+#content table.prj-details dd{
+	float:none;
+	width:100%;
+}
+#content #addProjectForm input[type="text"], #content #addProjectForm textarea, #content #addProjectForm select{
+	width:90%;
+}
+#content #addProjectForm #start_date, #content #addProjectForm #end_date{
+	width:120px;
+}
+#content h1{
+	width:100%;
+}
+#content .sidebar{
+
+}
+#content .col-style1{	
+	width:73%;
+}
+#content .style-full{
+	float:left;
+	display:inline;
+	margin:0 0 0 15px;
+}
+#content .tabs{
+	background:#eee url(../images/content-top-full.gif) repeat-x scroll left bottom;
+}
+#content .home-width{
+	width:960px;
+	margin:auto;
+}
+#content .home-sections{
+	width:100%;
+	background:#fff url(../images/home-sections-top-full.gif) repeat-x left top;
+}
+#content .home-sections .inner-sec{
+	width:960px;
+	margin:auto;
+	background:none;
+}
+/*#content.full .adds-box{
+	position:relative;
+	top:auto;
+	right:auto;
+	left:auto;
+	float:right;
+}*/
+
+/* ================== END for full width ========================= */

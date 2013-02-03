@@ -1,0 +1,37 @@
+RewriteEngine On
+RewriteBase /pradmin/trunk/
+
+
+RewriteRule ^\.htaccess$ - [F]
+ 
+RewriteCond %{REQUEST_URI} =""
+RewriteRule ^.*$ public/index.php [NC,L]
+ 
+RewriteCond %{REQUEST_URI} !^public/.*$
+RewriteRule ^(.*)$ public/$1
+ 
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^.*$ - [NC,L]
+ 
+RewriteRule ^public/.*$ public/index.php [NC,L]
+
+php_flag magic_quotes_gpc off  
+
+#SetEnvIf Referer bridge2romania.com internal
+#
+#<Files *>
+#order Deny,allow
+#Deny from all
+#allow from env=internal
+#</Files> 
+
+
+
+
+#AuthUserFile /homepages/36/d132967454/htdocs/bridge/.htpasswd
+#AuthGroupFile /dev/null
+#AuthName EnterPassword
+#AuthType Basic
+
+#require user admin
+
