@@ -3,12 +3,12 @@
 class Story_TestController extends Core_MainController {
 
     public function indexAction(){
-        $this->_helper->redirector('list', 'test');
+        $this->_helper->redirector('test', 'test');
     }
 
-    public function listAction(){
+    public function testAction(){
         $model = new Story_Model_Test();
-        $list = $model->test();
+        $this->view->list = $model->test();
 
     }
 

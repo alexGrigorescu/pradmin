@@ -12,7 +12,7 @@ class Story_Model_Test extends Core_MainModel
             ->select()
             ->from(array('p' => 'products'))
             ->join(array('c' => 'categories'), 'p.category_id = c.id')
-            ->where("p.name like ?", "%a%")
+            ->where("p.name like ?", "a%")
             ->order('p.id DESC');
 
         $result = $this->getDB()->fetchAll($select);
